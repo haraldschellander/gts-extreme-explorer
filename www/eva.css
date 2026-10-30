@@ -1,0 +1,71 @@
+:root {
+  --eva-bg: #0E1722;
+  --eva-surface: #152232;
+  --eva-raised: #1C2D42;
+  --eva-line: #2A3C54;
+  --eva-text: #E6EDF5;
+  --eva-muted: #8EA2B8;
+  --eva-accent: #F2A25C;
+}
+
+body { font-variant-numeric: tabular-nums; }
+
+.navbar { border-bottom: 1px solid var(--eva-line); }
+.navbar-brand { font-weight: 600; letter-spacing: 0.01em; }
+
+.bslib-sidebar-layout > .sidebar { background-color: var(--eva-surface); }
+.sidebar-foot { margin-top: auto; color: var(--eva-muted); font-size: 0.78rem; line-height: 1.4; }
+
+/* Map */
+.map-wrap { position: relative; height: 100%; min-height: 420px; }
+.map-wrap .leaflet-container { background: var(--eva-bg); }
+.map-panel {
+  position: absolute; top: 12px; left: 12px; z-index: 1000;
+  width: min(320px, calc(100% - 24px));
+  background: rgba(21, 34, 50, 0.92);
+  backdrop-filter: blur(6px);
+  border: 1px solid var(--eva-line);
+  border-radius: 10px;
+  padding: 12px 12px 10px;
+}
+.map-panel .form-group { margin-bottom: 8px; }
+.map-panel .shiny-text-output { color: var(--eva-muted); font-size: 0.8rem; }
+.leaflet-container .info.legend {
+  background: rgba(21, 34, 50, 0.92);
+  color: var(--eva-text);
+  border: 1px solid var(--eva-line);
+  box-shadow: none;
+  border-radius: 8px;
+}
+.leaflet-tooltip { background: var(--eva-raised); color: var(--eva-text); border-color: var(--eva-line); }
+.leaflet-tooltip-top:before { border-top-color: var(--eva-line); }
+
+/* Results */
+.results { --bs-heading-color: var(--eva-text); }
+.stn-head h2 { font-size: 1.3rem; font-weight: 600; margin: 0; }
+.stn-meta { color: var(--eva-muted); font-size: 0.85rem; margin: 4px 0 0; max-width: 60ch; }
+
+.kpis { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; margin: 16px 0; }
+.kpi { background: var(--eva-raised); border: 1px solid var(--eva-line); border-radius: 10px; padding: 12px 14px; }
+.kpi .label { color: var(--eva-muted); font-size: 0.8rem; }
+.kpi .value { font-size: 1.6rem; font-weight: 600; line-height: 1.2; }
+.kpi.primary .value { color: var(--eva-accent); }
+.kpi .sub { color: var(--eva-muted); font-size: 0.78rem; margin-top: 2px; }
+
+.notice {
+  margin: 16px 0; padding: 12px 14px; border-radius: 10px;
+  background: var(--eva-raised); border: 1px solid var(--eva-line);
+  border-left: 3px solid var(--eva-accent);
+}
+
+.plot-block { margin-top: 18px; }
+.plot-block h3 { font-size: 0.95rem; font-weight: 600; margin: 0 0 6px; }
+
+.notes { margin-top: 20px; color: var(--eva-muted); font-size: 0.82rem; max-width: 70ch; }
+.notes summary { cursor: pointer; color: var(--eva-text); }
+
+.empty { padding: 32px 8px; max-width: 42ch; }
+.empty h2 { font-size: 1.2rem; font-weight: 600; }
+.empty p { color: var(--eva-muted); }
+
+.shiny-output-error-validation { color: var(--eva-muted); }
